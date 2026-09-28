@@ -45,7 +45,7 @@ public class Soup {
     public String companyCentered(){
         //use substring and length together to "cut" letters apart and splice in the "company" varaible 
         
-        return letters.substring(0,letters.length()/2)+company;
+        return letters.substring(0,letters.length()/2)+company+letters.substring(letters.length()/2);
     }
 
 
@@ -56,11 +56,16 @@ public class Soup {
 
     //should remove "num" letters from a random spot in the string letters. You may assume num never exceeds the length of the string.
     public void removeSome(int num){
-            letters.math.random()
+        int index = (int)(Math.random()*(letters.length()-num));
+         String firstHalf = letters.substring(0,index );
+         String secondHalf= letters.substring(index+num);
+         letters=firstHalf+secondHalf;
     }
 
     //should remove the word "word" from the string letters. If the word is not found in letters then it does nothing.
     public void removeWord(String word){
+        int index=letters.indexOf(word);
+        String firstHalf = letters.substring(0,index );
         
     }
 }
