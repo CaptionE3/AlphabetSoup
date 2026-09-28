@@ -45,18 +45,18 @@ public class Soup {
     public String companyCentered(){
         //use substring and length together to "cut" letters apart and splice in the "company" varaible 
         
-        return letters.substring(0,length/2)+company;
+        return letters.substring(0,letters.length()/2)+company;
     }
 
 
     //should remove the first available vowel from letters. If there are no vowels this method has no effect.
     public void removeFirstVowel(){
-        
+        letters.replace("[aeiouAEIOU]","");
     }
 
     //should remove "num" letters from a random spot in the string letters. You may assume num never exceeds the length of the string.
     public void removeSome(int num){
-
+            letters.math.random()
     }
 
     //should remove the word "word" from the string letters. If the word is not found in letters then it does nothing.
