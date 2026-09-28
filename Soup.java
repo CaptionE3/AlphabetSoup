@@ -43,7 +43,9 @@ public class Soup {
     //returns the letters currently stored with the company name placed directly in the center of all
     //the letters
     public String companyCentered(){
-        return "";
+        //use substring and length together to "cut" letters apart and splice in the "company" varaible 
+        
+        return letters.substring(0,length/2)+company;
     }
 
 
