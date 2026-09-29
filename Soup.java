@@ -1,3 +1,8 @@
+//Eitan A  pd.4
+//9/29/26
+
+
+
 public class Soup {
     //these are instance variables 
     private String letters;
@@ -33,39 +38,47 @@ public class Soup {
     }
 
 
-    //Use Math.random() to get a random character from the letters string and return it.
+    //precondition  letters has values
+    //postcondition returns a random value from letters
     public char randomLetter(){
-        
-        return letters.charAt((int)(Math.random()*letters.length()));
+                                                                                                        //example input top
+        return letters.charAt((int)(Math.random()*letters.length()));                                   //example output p
     }
 
 
-    //returns the letters currently stored with the company name placed directly in the center of all
-    //the letters
+    
+    //precondition input 
+    //postcondition puts letters in company name in middle of input
     public String companyCentered(){
-        //use substring and length together to "cut" letters apart and splice in the "company" varaible 
-        
+        //use substring and length together to "cut" letters apart and splice in the "company" varaible    //example input hi up
+                                                                                                           //example output hiwhatsup
         return letters.substring(0,letters.length()/2)+company+letters.substring(letters.length()/2);
     }
 
 
-    //should remove the first available vowel from letters. If there are no vowels this method has no effect.
-    public void removeFirstVowel(){
-        letters.replace("[aeiouAEIOU]","");
+    //precondition letters has a vowel
+    //postcondition letters has one less vowel
+    public void removeFirstVowel(){                                                                         // example input great
+        letters.replace("[aeiouAEIOU]","");                                             // example output grat   
     }
 
-    //should remove "num" letters from a random spot in the string letters. You may assume num never exceeds the length of the string.
+    
+    //precondition num length<=letters
+    //postcondition letters -3 characters
     public void removeSome(int num){
-        int index = (int)(Math.random()*(letters.length()-num));
-         String firstHalf = letters.substring(0,index );
+        int index = (int)(Math.random()*(letters.length()-num));                                           // example input 3
+         String firstHalf = letters.substring(0,index );                                        // example output hello to he
          String secondHalf= letters.substring(index+num);
          letters=firstHalf+secondHalf;
     }
 
-    //should remove the word "word" from the string letters. If the word is not found in letters then it does nothing.
-    public void removeWord(String word){
-        int index=letters.indexOf(word);
+    //precondition: letters exists and has length > 0 and word is a substring of letters
+    //postcondition: word is removed from letters
+    public void removeWord(String word){        //example input hiWhatsUp
+        int index=letters.indexOf(word);        //example output hiup
         String firstHalf = letters.substring(0,index );
-        
+        String secondHalf = letters.substring(index+word.length());
+        //                                      2
+        word=firstHalf+secondHalf;
     }
 }
