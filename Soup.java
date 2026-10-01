@@ -66,7 +66,7 @@ public class Soup {
 
     
     //precondition num length<=letters
-    //postcondition letters -3 characters
+    //postcondition letters removes the value of the input from the word
     public void removeSome(int num){
         int index = (int)(Math.random()*(letters.length()-num));                                           // example input 3
          String firstHalf = letters.substring(0,index );                                        // example output hello to he
